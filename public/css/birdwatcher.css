@@ -1,0 +1,28 @@
+
+/*----------------------------------------------------
+Flash message
+-----------------------------------------------------*/
+.flash_message {
+    width:100%;
+    text-align:center;
+    padding:5px;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:yellow;
+    font-weight:bold;
+}
+
+h1, h2, h3, footer{
+   text-align: center;
+}
+.jumbotron{
+  padding: 3em, 1.5em, 1.5em, 1em;
+}
+ul{
+  list-style-type: none;
+}
+#validationError{
+  color:red;
+  font-weight: bold;
+}

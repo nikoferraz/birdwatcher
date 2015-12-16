@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Birdwatcher
+        psr4_prefix: Birdwatcher
+        src_path: app
