@@ -9,10 +9,15 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <meta charset='utf-8'>
-    <link href='/css/foobooks.css' rel='stylesheet'>
+    <link href='/css/birdwatcher.css' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style>
     @yield('appendStyle')
     </style>
+    @yield('appendHead')
   </head>
   <body>
   <!-- If Session has flash message display flash message --> 
@@ -31,7 +36,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand hidden-xs" href="/">Birdwatcher</a>
+        <a class="navbar-brand hidden-xs center" href="/">Birdwatcher</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -72,10 +77,9 @@
       @yield('jumbotron')
     </section>
     </div>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <section> 
+      @yield('content')
+    </section>
     <footer>
       &copy; {{ date('Y') }}
     </footer>

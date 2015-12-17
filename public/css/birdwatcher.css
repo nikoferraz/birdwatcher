@@ -14,10 +14,11 @@ Flash message
 }
 
 h1, h2, h3, footer{
-   text-align: center;
+  text-align: center;
 }
 .jumbotron{
   padding: 3em, 1.5em, 1.5em, 1em;
+  padding-left: 100px;
 }
 ul{
   list-style-type: none;
@@ -25,4 +26,14 @@ ul{
 #validationError{
   color:red;
   font-weight: bold;
+}
+
+.image{
+  margin: 3em;
+  width: 500px;
+  float: left;
+}
+
+.thumbnail{
+overflow: hidden;
 }

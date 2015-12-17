@@ -9,15 +9,15 @@ use Birdwatcher\Http\Controllers\Controller;
 
 class BirdController extends Controller
 {
-  public function getCreate()
+  public function getCreate(Request $request)
   {
-    return view('birds.create'); 
+    $rarityModel = new \Birdwatcher\Rarity();
+    $rarity_for_dropdown = $rarityModel->getRarityForDropdown();
+    return view('birds.create')->with('rarity_for_dropdown',$rarity_for_dropdown);
   }
 }
-/*
 
-    Route::get('/birds/create', 'BirdController@getCreate');
-    Route::post('/birds/create', 'BirdController@postCreate');
 
-    Route::get('/birds/edit/{id?}', 'BirdController@getEdit');
-    Route::post('/birds/edit', 'BirdController@postEdit');
+
+
+       

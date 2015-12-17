@@ -30,9 +30,11 @@ Route::get('/confirm-login-worked', function() {
     return;
 
 });
+
+Route::get('/birds/create', 'BirdController@getCreate');
+//Route::post('/birds/create', 'BirdController@postCreate');
 //Route::group(['middleware' => 'auth'], function () {
-    Route::get('/birds/create', 'BirdController@getCreate');
-    Route::post('/birds/create', 'BirdController@postCreate');
+    
 
     Route::get('/birds/edit/{id?}', 'BirdController@getEdit');
     Route::post('/birds/edit', 'BirdController@postEdit');
