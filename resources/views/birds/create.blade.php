@@ -61,6 +61,15 @@
                 @endforeach
             </select>
         </div>
+        <div class='form-group'>
+            <label>Description:</label>
+            <input
+                type='text'
+                id='description'
+                name='description'
+                value='{{ old('description','Insert something here ...') }}'
+            >
+        </div>
 
         <button type="submit" class="btn btn-primary">Add bird</button>
     </form>

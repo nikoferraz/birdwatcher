@@ -27,23 +27,35 @@ jQuery(window).load(function() {
 @stop
 @section('jumbotron')
   <br> 
-  <p>
+  <h3>
     Welcome to Birdwatcher, where birdwatchers can share information and feel at home.
     To get started <a href='/'>log in</a> or <a href='/register'>register</a>.
-  </p>
+  </h3>
 <br>
 @stop
 @section('content')
+<div class ="container">
+  <h3>Log in and start creating a log of the birds you have seen ...</h3><br>
+  <p>Birdwatcher allows you to keep a detailed record of the birds that you have seen and where you have seen them.</p>
+</div> 
 <?php
-$birds= \Birdwatcher\Bird::all();
-
+$birds= \Birdwatcher\Bird::orderBy('id','ASC')->get();
+$output='';
 if(!$birds->isEmpty()) {
     foreach($birds as $bird) {
       $rarity= \Birdwatcher\Rarity::find($bird->rarity_id);
-      $rarity = $rarity->rarity.'('.$rarity->rarity_acronym.')'; 
-      $bird = '<div class="row">'.'<div class="col-sm-6 col-md-4">'.'<div class="thumbnail">'.'<img src="'.$bird->image.'">'.'<div class="thumbnail">'.'<h3>'.$bird->name.' ('.$bird->scientific_name.') </h3>'.'<p>'.'Description: '.$bird->description.'</p></div></div></div></div>';
-        echo $bird.' '.'</div><br><br>';
+      $rarity = $rarity->rarity.' ('.$rarity->rarity_acronym.')'; 
+      if($rarity=="Least concern (LC)")
+        $rarity='<font color="green">'.$rarity.'</font>';
+      elseif($rarity=="Critically endangered (CR)")
+        $rarity='<font color="fuscia">'.$rarity.'</font>';
+      elseif($rarity=="Vulnerable (VU)")
+        $rarity='<font color="purple">'.$rarity.'</font>';
+
+
+      $output = $output.'<div class="col-sm-6 col-md-4">'.'<div class="thumbnail">'.'<img src="'.$bird->image.'">'.'<div class="thumbnail">'.'<h3>'.$bird->name.' (<i> '.$bird->scientific_name.' </i>) </h3>'.'<p><b>IUCN Conservation Status: '.$rarity.'</b></p>'.'<p>'.'Description: '.$bird->description.'</p></div></div></div>';
     }
+    echo '<div class="row">'.$output.' '.'</div><br><br>';
 }
 else {
     echo 'No birds found';

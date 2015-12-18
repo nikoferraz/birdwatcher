@@ -81,7 +81,7 @@
       @yield('content')
     </section>
     <footer>
-      &copy; {{ date('Y') }}
+      &copy; {{ date('Y') }} Birdwatcher 
     </footer>
   </body>
 </html>

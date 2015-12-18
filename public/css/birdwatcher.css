@@ -18,7 +18,9 @@ h1, h2, h3, footer{
 }
 .jumbotron{
   padding: 3em, 1.5em, 1.5em, 1em;
-  padding-left: 100px;
+  padding: 50px;
+  margin-top: 80px;
+  background-color: #F0FFFF;
 }
 ul{
   list-style-type: none;
@@ -36,4 +38,12 @@ ul{
 
 .thumbnail{
 overflow: hidden;
+}
+
+body{
+  margin: 50px;
+}
+.container{
+  margin: 50px;
+  width: 100%;
 }

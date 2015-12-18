@@ -22,7 +22,7 @@ class BirdsTableSeeder extends Seeder
       'natural_habitat' => 'Caribbean and Central America',
       'description' => 'A medium to large heron of shallow salt water, the Reddish Egret comes in a dark and a white form. It is a very active forager, often seen running, jumping, and spinning in its pursuit of fish.',
       ]);
-      $rarity_id = \Birdwatcher\Rarity::where('rarity','=','Least concern')->pluck('id');
+      $rarity_id = \Birdwatcher\Rarity::where('rarity','=','Vulnerable')->pluck('id');
       DB::table('birds')->insert([
       'created_at' => Carbon\Carbon::now()->toDateTimeString(),
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -33,7 +33,7 @@ class BirdsTableSeeder extends Seeder
       'natural_habitat' => 'North America',
       'description' => 'One of the fastest flying birds in North America, the White-throated Swift is a common sight in the canyons, foothills, and mountains of the American West.',
       ]);
-      $rarity_id = \Birdwatcher\Rarity::where('rarity','=','Least concern')->pluck('id');
+      $rarity_id = \Birdwatcher\Rarity::where('rarity','=','Critically endangered')->pluck('id');
       DB::table('birds')->insert([
       'created_at' => Carbon\Carbon::now()->toDateTimeString(),
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
