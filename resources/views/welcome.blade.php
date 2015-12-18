@@ -29,7 +29,7 @@ jQuery(window).load(function() {
   <br> 
   <h3>
     Welcome to Birdwatcher, where birdwatchers can share information and feel at home.
-    To get started <a href='/'>log in</a> or <a href='/register'>register</a>.
+    To get started <a href='/login'>log in</a> or <a href='/register'>register</a>.
   </h3>
 <br>
 @stop

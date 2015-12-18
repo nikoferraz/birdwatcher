@@ -15,11 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-# CRUD Operations/Views for Birds 
 
-Route::post('/birds/create', 'BirdController@postCreate');
-Route::get('/birds/create', 'BirdController@getCreate');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/birds/create', 'BirdController@getCreate');
+    Route::post('/birds/create', 'BirdController@postCreate');
+    Route::get('/birds/edit/{id?}', 'BirdController@getEdit');
+    Route::post('/birds/edit', 'BirdController@postEdit');
+    Route::get('/books', 'BookController@getIndex');
+});
+
+# CRUD Operations/Views for Birds 
+Route::get('/birds/create', [
+    'middleware' => 'auth',
+    'uses' => 'BirdController@getCreate'
+]);
+
 Route::get('/birds', 'BirdController@getIndex');
+
+
 
 Route::get('/confirm-login-worked', function() {
 
@@ -39,8 +52,7 @@ Route::get('/confirm-login-worked', function() {
 //Route::group(['middleware' => 'auth'], function () {
     
 
-    Route::get('/birds/edit/{id?}', 'BirdController@getEdit');
-    Route::post('/birds/edit', 'BirdController@postEdit');
+    
 //});
 # Show login form
 Route::get('/login', 'Auth\AuthController@getLogin');

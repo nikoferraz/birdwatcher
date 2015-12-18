@@ -1,11 +1,9 @@
 @extends('layouts.master')
-
+@section('jumbotron')
+<h2>Login</h2>
+<br><p>Don't have an account? <a href='/register'>Register here...</a></p>
+@stop
 @section('content')
-
-    <p>Don't have an account? <a href='/register'>Register here...</a></p>
-
-    <h1>Login</h1>
-
     @if(count($errors) > 0)
         <ul class='errors'>
             @foreach ($errors->all() as $error)

@@ -6,7 +6,7 @@ Flash message
     width:100%;
     text-align:center;
     padding:5px;
-    position:fixed;
+    position:;
     top:0;
     left:0;
     background-color:yellow;
@@ -18,9 +18,10 @@ h1, h2, h3, footer{
 }
 .jumbotron{
   padding: 3em, 1.5em, 1.5em, 1em;
-  padding: 50px;
-  margin-top: 80px;
+  padding: 20px;
+  margin-top: 0px;
   background-color: #F0FFFF;
+  text-align:center;
 }
 ul{
   list-style-type: none;
@@ -40,8 +41,11 @@ ul{
 overflow: hidden;
 }
 
-body{
+.narrowBody{
   margin: 50px;
+}
+body{
+  padding-top: 52px;
 }
 .container{
   margin: 50px;

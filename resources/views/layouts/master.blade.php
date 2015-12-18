@@ -20,12 +20,6 @@
     @yield('appendHead')
   </head>
   <body>
-  <!-- If Session has flash message display flash message --> 
-  @if(\Session::has('flash_message'))
-    <div class='flash_message'>
-      {{ \Session::get('flash_message') }}
-    </div>
-  @endif
   <!-- Navbar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -71,6 +65,13 @@
       </div>
     </div>
     </nav>
+    <!-- If Session has flash message display flash message --> 
+  @if(\Session::has('flash_message'))
+    <div class='flash_message'>
+      {{ \Session::get('flash_message') }}
+    </div>
+  @endif
+  <div class = "narrowBody"> 
     <div class="jumbotron">
     <h2>@yield('title')</h2>
     <section> 
@@ -80,6 +81,7 @@
     <section> 
       @yield('content')
     </section>
+  </div>
     <footer>
       &copy; {{ date('Y') }} Birdwatcher 
     </footer>

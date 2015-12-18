@@ -36,4 +36,10 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function birds()
+    {
+      # With timetsamps() will ensure the pivot table has its created_at/updated_at fields automatically maintained
+      return $this->hasMany('\Birdwatcher\Bird')->withTimestamps();
+    }
 }

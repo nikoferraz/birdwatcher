@@ -11,7 +11,15 @@ class Bird extends Model
       # With timetsamps() will ensure the pivot table has its created_at/updated_at fields automatically maintained
       return $this->belongsToMany('\Birdwatcher\Location')->withTimestamps();;
   }
-    public function rarities() {
+
+  public function rarities()
+  {
         return $this->belongsToMany('\Birdwatcher\Rarity');
+  }
+
+  public function users()
+  {
+      # With timetsamps() will ensure the pivot table has its created_at/updated_at fields automatically maintained
+      return $this->belongsToMany('\Birdwatcher\User')->withTimestamps();
   }
 }

@@ -29,7 +29,7 @@ class AuthController extends Controller
     protected $loginPath = '/login';
 
     # Where should the user be redirected to after logging out?
-    protected $redirectAfterLogout = '/';
+    protected $redirectAfterLogout = '/logout';
     /**
      * Create a new authentication controller instance.
      *
@@ -68,5 +68,13 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    // Flashes message when user logs out 
+    public function getLogout()
+    {
+        \Auth::logout();
+        \Session::flash('flash_message','You have been logged out.');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 }

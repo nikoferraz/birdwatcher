@@ -8,7 +8,13 @@
 @stop
 @section('content')
 
-    
+     @if(count($errors) > 0)
+        <ul class='errors'>
+            @foreach ($errors->all() as $error)
+                <li><span class='fa fa-exclamation-circle'></span> {{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 
 
     <form method='POST' action='/birds/create'>
@@ -21,7 +27,7 @@
                 type='text'
                 id='name'
                 name='name'
-                value='{{ old('name','Bird Name') }}'
+                value='{{ old('name','Colloquial name') }}'
             >
         </div>
 
@@ -31,7 +37,7 @@
                 type='text'
                 id='scientific_name'
                 name='scientific_name'
-                value='{{ old('scientific_name','birdus namus scientificus') }}'
+                value='{{ old('scientific_name','Genus species') }}'
             >
         </div>
 
@@ -41,7 +47,7 @@
                 type='text'
                 id='image'
                 name="image"
-                value='{{ old('image','Some Image') }}'
+                value='{{ old('image','Image URL') }}'
                 >
         </div>
 
@@ -51,7 +57,7 @@
                 type='text'
                 id='natural_habitat'
                 name="natural_habitat"
-                value='{{ old('natural_habitat','Place') }}'
+                value='{{ old('natural_habitat','Unkown ...') }}'
                 >
         </div>
 

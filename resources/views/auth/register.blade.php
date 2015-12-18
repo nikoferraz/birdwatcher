@@ -1,10 +1,11 @@
 @extends('layouts.master')
-
+@section('jumbotron')
+    <h2>Register</h2>
+    <br><p>Already have an account? <a href='/login'>Login here...</a></p>
+@stop
 @section('content')
 
-    <p>Already have an account? <a href='/login'>Login here...</a></p>
 
-    <h1>Register</h1>
 
     @if(count($errors) > 0)
         <ul class='errors'>
