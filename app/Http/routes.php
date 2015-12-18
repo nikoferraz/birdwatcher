@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+# CRUD Operations/Views for Birds 
+
+Route::post('/birds/create', 'BirdController@postCreate');
+Route::get('/birds/create', 'BirdController@getCreate');
+Route::get('/birds', 'BirdController@getIndex');
+
 Route::get('/confirm-login-worked', function() {
 
     # You may access the authenticated user via the Auth facade
@@ -30,9 +36,6 @@ Route::get('/confirm-login-worked', function() {
     return;
 
 });
-Route::get('/birds', 'BirdController@getIndex');
-Route::get('/birds/create', 'BirdController@getCreate');
-Route::post('/birds/create', 'BirdController@postCreate');
 //Route::group(['middleware' => 'auth'], function () {
     
 

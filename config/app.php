@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -144,7 +145,7 @@ return [
         Birdwatcher\Providers\AuthServiceProvider::class,
         Birdwatcher\Providers\EventServiceProvider::class,
         Birdwatcher\Providers\RouteServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -193,7 +194,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Html' => Illuminate\Html\HtmlFacade::class,
+        'Form' => Illuminate\Html\FormFacade::class,
     ],
 
 ];

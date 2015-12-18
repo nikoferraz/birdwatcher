@@ -2,10 +2,13 @@
 
 @section('title')
 @stop
-
 @section('jumbotron')
+<h1>Add a new bird</h1>
+<br><br><h3>Use the form below to enter a new bird into the system. If you need a bird image <a href="https://www.allaboutbirds.org/guide/search/" target="_blank">click here.</a></h3>
+@stop
+@section('content')
 
-    <h2>Add a new bird</h2>
+    
 
 
     <form method='POST' action='/birds/create'>
@@ -28,7 +31,7 @@
                 type='text'
                 id='scientific_name'
                 name='scientific_name'
-                value='{{ old('scientific name','birdus namus scientificus') }}'
+                value='{{ old('scientific_name','birdus namus scientificus') }}'
             >
         </div>
 
@@ -54,8 +57,8 @@
 
 
        <div class='form-group'>
-            <label for='rarity'>IUCN Rarity:</label>
-            <select name='rarity' id='rarity'>
+            <label for='rarity_id'>IUCN Rarity:</label>
+            <select name='rarity_id' id='rarity_id'>
                 @foreach($rarity_for_dropdown as $rarity_id => $rarity)
                     <option value='{{$rarity_id }}'> {{ $rarity}} </option>
                 @endforeach
